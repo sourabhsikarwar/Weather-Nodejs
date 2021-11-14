@@ -36,4 +36,4 @@ const server = http.createServer((req, res) => {
     else {
         res.end("File not found");
     }
-}).listen(8080, "127.0.0.1");
+}).listen(process.env.PORT || 8080, "127.0.0.1");
