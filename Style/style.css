@@ -1,0 +1,190 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+}
+.box {
+  width: 25vw;
+  height: 60vh;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+  background: #6dd1ff;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  min-width: 20rem;
+  min-height: 35rem;
+}
+.wave {
+  opacity: 0.5;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  background: #fff;
+  width: 50rem;
+  height: 50rem;
+  margin-left: -25rem;
+  margin-top: -25rem;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 8s infinite linear;
+  z-index: 1;
+}
+.wave-three {
+  opacity: 0.3;
+  animation: drift 10s infinite linear;
+  z-index: 2 !important;
+}
+.wave-two {
+  opacity: 0.2;
+  animation: drift 12s infinite linear;
+  z-index: 3 !important;
+}
+
+.box:after {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+.info {
+  position: absolute;
+  bottom: 16px;
+  width: 100%;
+  height: 45%;
+  z-index: 4;
+}
+.location {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-weight: 600 !important;
+  font-size: 2.5rem;
+}
+.location i {
+  margin: 1rem;
+}
+#date {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #57606f;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.temp {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 3rem;
+}
+.tempmin_max {
+  text-align: center;
+  margin-top: 0.3rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #57606f;
+}
+#weathercon {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#weathercon i {
+  color: rgb(255, 226, 62);
+  font-size: 4rem;
+  animation: i-anime 2s linear infinite alternate;
+}
+@keyframes i-anime {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.6);
+  }
+}
+
+/* media queries */
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .box {
+    width: 100%;
+    height: 100%;
+  }
+  .wave {
+    opacity: 0.5;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    background: #fff;
+    width: 52rem;
+    height: 52rem;
+    margin-left: -27rem;
+    margin-top: -27rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 8s infinite linear;
+    z-index: 1;
+  }
+  .wave-three {
+    opacity: 0.3;
+    animation: drift 10s infinite linear;
+    z-index: 2 !important;
+  }
+  .wave-two {
+    opacity: 0.2;
+    animation: drift 12s infinite linear;
+    z-index: 3 !important;
+  }
+}
+
+/* // X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .wave {
+        opacity: 0.5;
+        position: absolute;
+        top: 115%;
+        left: 50%;
+        background: #fff;
+        width: 52rem;
+        height: 52rem;
+        margin-left: -27rem;
+        margin-top: -27rem;
+        transform-origin: 50% 48%;
+        border-radius: 43%;
+        animation: drift 8s infinite linear;
+        z-index: 1;
+      }
+      .wave-three {
+        opacity: 0.3;
+        animation: drift 10s infinite linear;
+        z-index: 2 !important;
+      }
+      .wave-two {
+        opacity: 0.2;
+        animation: drift 12s infinite linear;
+        z-index: 3 !important;
+      }
+}
